@@ -1,8 +1,10 @@
 <?php
-include('header.php');
-include('filmData.php');
-include ('readyData.php');
-include ('Films.php');
+if (isset($argv) == true) {
+    include('query.php');
+} else {
+    include('form.php');
+}
+
 
 
 

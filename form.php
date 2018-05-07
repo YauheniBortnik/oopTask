@@ -1,4 +1,5 @@
 <?php
+include('header.php');
 $count = count($filmArray);
 ?>
 <!DOCTYPE html>
@@ -9,10 +10,13 @@ $count = count($filmArray);
 </head>
 <body>
 <div id="form_block">
-    <form id="main_form" method="POST" action="index.php">
+    <form id="main_form" method="POST" action="action.php">
         Показать фильмы с датой выхода не более 7 дней?
         <input type="checkbox" name="validDate" value="Yes"/>
         <input type="submit" value="List" name="list_btn" class="btn">
+    </form>
+    <form id="query_form" method="POST" action="query.php">
+        <input type="submit" value="Query" name="query_btn" class="btn">
     </form>
 </div>
 <table cellpadding="5" cellspacing="0" border="1" align="center" id="main_table">
@@ -50,7 +54,6 @@ $count = count($filmArray);
             <td bgcolor="#fffaf0" width="600px"><?php echo $filmArray[$i]->overview; ?></td>
             <td class="headline" bgcolor="#da70d6"><?php echo $filmArray[$i]->releaseDate; ?></td>
             <td class="headline" bgcolor="yellow"><?php echo $filmArray[$i]->genre; ?></td></tr><?php
-
         }
     } ?>
 </table>

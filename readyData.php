@@ -12,19 +12,11 @@ for ($i = 0; $i < count($result); $i++) {
     array_push($filmArray, new Films($result[$i]['id'], $result[$i]['title'], $result[$i]['original_title'], $result[$i]['poster_path'], $result[$i]['overview'], $result[$i]['release_date'], $result[$i]['genre_ids']));
     $filmArray[$i]->getFilmGenre($result1);
 }
-if (file_exists('./pictures/') == true) {
-    foreach (glob('./pictures/*') as $document) {
-        unlink($document);
-    }
-}
-else
-for ($i = 0; $i < count($filmArray); $i++) {
-    if (!file_exists("./images/img" . $i . ".jpg") == true) {
-        $pictures = file_get_contents('https://image.tmdb.org/t/p/w400' . $filmArray[$i]->poster);
-        file_put_contents("./pictures/img" . $i . ".jpg", $pictures);
-    }
-}
-include('form.php');
+
+
+
+
+
 
 
 
